@@ -21,7 +21,8 @@ class Google_Service_CivicInfo_PollingLocation extends Google_Collection
   protected $addressType = 'Google_Service_CivicInfo_SimpleAddressType';
   protected $addressDataType = '';
   public $endDate;
-  public $id;
+  public $latitude;
+  public $longitude;
   public $name;
   public $notes;
   public $pollingHours;
@@ -52,13 +53,21 @@ class Google_Service_CivicInfo_PollingLocation extends Google_Collection
   {
     return $this->endDate;
   }
-  public function setId($id)
+  public function setLatitude($latitude)
   {
-    $this->id = $id;
+    $this->latitude = $latitude;
   }
-  public function getId()
+  public function getLatitude()
   {
-    return $this->id;
+    return $this->latitude;
+  }
+  public function setLongitude($longitude)
+  {
+    $this->longitude = $longitude;
+  }
+  public function getLongitude()
+  {
+    return $this->longitude;
   }
   public function setName($name)
   {

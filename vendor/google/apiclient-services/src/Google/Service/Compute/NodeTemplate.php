@@ -17,6 +17,7 @@
 
 class Google_Service_Compute_NodeTemplate extends Google_Model
 {
+  public $cpuOvercommitType;
   public $creationTimestamp;
   public $description;
   public $id;
@@ -28,9 +29,19 @@ class Google_Service_Compute_NodeTemplate extends Google_Model
   protected $nodeTypeFlexibilityDataType = '';
   public $region;
   public $selfLink;
+  protected $serverBindingType = 'Google_Service_Compute_ServerBinding';
+  protected $serverBindingDataType = '';
   public $status;
   public $statusMessage;
 
+  public function setCpuOvercommitType($cpuOvercommitType)
+  {
+    $this->cpuOvercommitType = $cpuOvercommitType;
+  }
+  public function getCpuOvercommitType()
+  {
+    return $this->cpuOvercommitType;
+  }
   public function setCreationTimestamp($creationTimestamp)
   {
     $this->creationTimestamp = $creationTimestamp;
@@ -116,6 +127,20 @@ class Google_Service_Compute_NodeTemplate extends Google_Model
   public function getSelfLink()
   {
     return $this->selfLink;
+  }
+  /**
+   * @param Google_Service_Compute_ServerBinding
+   */
+  public function setServerBinding(Google_Service_Compute_ServerBinding $serverBinding)
+  {
+    $this->serverBinding = $serverBinding;
+  }
+  /**
+   * @return Google_Service_Compute_ServerBinding
+   */
+  public function getServerBinding()
+  {
+    return $this->serverBinding;
   }
   public function setStatus($status)
   {

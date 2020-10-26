@@ -18,17 +18,18 @@
 class Google_Service_ShoppingContent_Account extends Google_Collection
 {
   protected $collection_key = 'youtubeChannelLinks';
+  protected $adsLinksType = 'Google_Service_ShoppingContent_AccountAdsLink';
+  protected $adsLinksDataType = 'array';
   public $adultContent;
-  protected $adwordsLinksType = 'Google_Service_ShoppingContent_AccountAdwordsLink';
-  protected $adwordsLinksDataType = 'array';
   protected $businessInformationType = 'Google_Service_ShoppingContent_AccountBusinessInformation';
   protected $businessInformationDataType = '';
+  public $cssId;
   protected $googleMyBusinessLinkType = 'Google_Service_ShoppingContent_AccountGoogleMyBusinessLink';
   protected $googleMyBusinessLinkDataType = '';
   public $id;
   public $kind;
+  public $labelIds;
   public $name;
-  public $reviewsUrl;
   public $sellerId;
   protected $usersType = 'Google_Service_ShoppingContent_AccountUser';
   protected $usersDataType = 'array';
@@ -36,6 +37,20 @@ class Google_Service_ShoppingContent_Account extends Google_Collection
   protected $youtubeChannelLinksType = 'Google_Service_ShoppingContent_AccountYouTubeChannelLink';
   protected $youtubeChannelLinksDataType = 'array';
 
+  /**
+   * @param Google_Service_ShoppingContent_AccountAdsLink
+   */
+  public function setAdsLinks($adsLinks)
+  {
+    $this->adsLinks = $adsLinks;
+  }
+  /**
+   * @return Google_Service_ShoppingContent_AccountAdsLink
+   */
+  public function getAdsLinks()
+  {
+    return $this->adsLinks;
+  }
   public function setAdultContent($adultContent)
   {
     $this->adultContent = $adultContent;
@@ -43,20 +58,6 @@ class Google_Service_ShoppingContent_Account extends Google_Collection
   public function getAdultContent()
   {
     return $this->adultContent;
-  }
-  /**
-   * @param Google_Service_ShoppingContent_AccountAdwordsLink
-   */
-  public function setAdwordsLinks($adwordsLinks)
-  {
-    $this->adwordsLinks = $adwordsLinks;
-  }
-  /**
-   * @return Google_Service_ShoppingContent_AccountAdwordsLink
-   */
-  public function getAdwordsLinks()
-  {
-    return $this->adwordsLinks;
   }
   /**
    * @param Google_Service_ShoppingContent_AccountBusinessInformation
@@ -71,6 +72,14 @@ class Google_Service_ShoppingContent_Account extends Google_Collection
   public function getBusinessInformation()
   {
     return $this->businessInformation;
+  }
+  public function setCssId($cssId)
+  {
+    $this->cssId = $cssId;
+  }
+  public function getCssId()
+  {
+    return $this->cssId;
   }
   /**
    * @param Google_Service_ShoppingContent_AccountGoogleMyBusinessLink
@@ -102,6 +111,14 @@ class Google_Service_ShoppingContent_Account extends Google_Collection
   {
     return $this->kind;
   }
+  public function setLabelIds($labelIds)
+  {
+    $this->labelIds = $labelIds;
+  }
+  public function getLabelIds()
+  {
+    return $this->labelIds;
+  }
   public function setName($name)
   {
     $this->name = $name;
@@ -109,14 +126,6 @@ class Google_Service_ShoppingContent_Account extends Google_Collection
   public function getName()
   {
     return $this->name;
-  }
-  public function setReviewsUrl($reviewsUrl)
-  {
-    $this->reviewsUrl = $reviewsUrl;
-  }
-  public function getReviewsUrl()
-  {
-    return $this->reviewsUrl;
   }
   public function setSellerId($sellerId)
   {

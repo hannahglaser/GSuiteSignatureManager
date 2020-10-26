@@ -19,7 +19,9 @@
  * Service definition for IAMCredentials (v1).
  *
  * <p>
- * IAM Service Account Credentials API</p>
+ * Creates short-lived credentials for impersonating IAM service accounts.
+ * *Note:* This API is tied to the IAM API (iam.googleapis.com). Enabling or
+ * disabling this API will also enable or disable the IAM API.</p>
  *
  * <p>
  * For more information about this service, see the API
@@ -39,13 +41,15 @@ class Google_Service_IAMCredentials extends Google_Service
   /**
    * Constructs the internal representation of the IAMCredentials service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://iamcredentials.googleapis.com/';
+    $this->rootUrl = $rootUrl ?: 'https://iamcredentials.googleapis.com/';
     $this->servicePath = '';
+    $this->batchPath = 'batch';
     $this->version = 'v1';
     $this->serviceName = 'iamcredentials';
 
@@ -67,16 +71,6 @@ class Google_Service_IAMCredentials extends Google_Service
               ),
             ),'generateIdToken' => array(
               'path' => 'v1/{+name}:generateIdToken',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'generateIdentityBindingAccessToken' => array(
-              'path' => 'v1/{+name}:generateIdentityBindingAccessToken',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'name' => array(
