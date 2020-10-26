@@ -32,23 +32,47 @@ class Google_Service_HangoutsChat extends Google_Service
 {
 
 
+  public $media;
   public $spaces;
   public $spaces_members;
   public $spaces_messages;
+  public $spaces_messages_attachments;
   
   /**
    * Constructs the internal representation of the HangoutsChat service.
    *
-   * @param Google_Client $client
+   * @param Google_Client $client The client used to deliver requests.
+   * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Google_Client $client)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
     parent::__construct($client);
-    $this->rootUrl = 'https://chat.googleapis.com/';
+    $this->rootUrl = $rootUrl ?: 'https://chat.googleapis.com/';
     $this->servicePath = '';
+    $this->batchPath = 'batch';
     $this->version = 'v1';
     $this->serviceName = 'chat';
 
+    $this->media = new Google_Service_HangoutsChat_Resource_Media(
+        $this,
+        $this->serviceName,
+        'media',
+        array(
+          'methods' => array(
+            'download' => array(
+              'path' => 'v1/media/{+resourceName}',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'resourceName' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),
+          )
+        )
+    );
     $this->spaces = new Google_Service_HangoutsChat_Resource_Spaces(
         $this,
         $this->serviceName,
@@ -107,13 +131,13 @@ class Google_Service_HangoutsChat extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'pageSize' => array(
                   'location' => 'query',
                   'type' => 'integer',
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
               ),
             ),
@@ -172,6 +196,26 @@ class Google_Service_HangoutsChat extends Google_Service
                 'updateMask' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+              ),
+            ),
+          )
+        )
+    );
+    $this->spaces_messages_attachments = new Google_Service_HangoutsChat_Resource_SpacesMessagesAttachments(
+        $this,
+        $this->serviceName,
+        'attachments',
+        array(
+          'methods' => array(
+            'get' => array(
+              'path' => 'v1/{+name}',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'name' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
                 ),
               ),
             ),

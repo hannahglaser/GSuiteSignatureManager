@@ -17,9 +17,34 @@
 
 class Google_Service_Container_NetworkConfig extends Google_Model
 {
+  protected $defaultSnatStatusType = 'Google_Service_Container_DefaultSnatStatus';
+  protected $defaultSnatStatusDataType = '';
+  public $enableIntraNodeVisibility;
   public $network;
   public $subnetwork;
 
+  /**
+   * @param Google_Service_Container_DefaultSnatStatus
+   */
+  public function setDefaultSnatStatus(Google_Service_Container_DefaultSnatStatus $defaultSnatStatus)
+  {
+    $this->defaultSnatStatus = $defaultSnatStatus;
+  }
+  /**
+   * @return Google_Service_Container_DefaultSnatStatus
+   */
+  public function getDefaultSnatStatus()
+  {
+    return $this->defaultSnatStatus;
+  }
+  public function setEnableIntraNodeVisibility($enableIntraNodeVisibility)
+  {
+    $this->enableIntraNodeVisibility = $enableIntraNodeVisibility;
+  }
+  public function getEnableIntraNodeVisibility()
+  {
+    return $this->enableIntraNodeVisibility;
+  }
   public function setNetwork($network)
   {
     $this->network = $network;

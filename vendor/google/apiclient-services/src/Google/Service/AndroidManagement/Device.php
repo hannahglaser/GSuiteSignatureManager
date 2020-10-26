@@ -50,14 +50,18 @@ class Google_Service_AndroidManagement_Device extends Google_Collection
   protected $networkInfoDataType = '';
   protected $nonComplianceDetailsType = 'Google_Service_AndroidManagement_NonComplianceDetail';
   protected $nonComplianceDetailsDataType = 'array';
+  public $ownership;
   public $policyCompliant;
   public $policyName;
   protected $powerManagementEventsType = 'Google_Service_AndroidManagement_PowerManagementEvent';
   protected $powerManagementEventsDataType = 'array';
   public $previousDeviceNames;
+  protected $securityPostureType = 'Google_Service_AndroidManagement_SecurityPosture';
+  protected $securityPostureDataType = '';
   protected $softwareInfoType = 'Google_Service_AndroidManagement_SoftwareInfo';
   protected $softwareInfoDataType = '';
   public $state;
+  public $systemProperties;
   protected $userType = 'Google_Service_AndroidManagement_User';
   protected $userDataType = '';
   public $userName;
@@ -298,6 +302,14 @@ class Google_Service_AndroidManagement_Device extends Google_Collection
   {
     return $this->nonComplianceDetails;
   }
+  public function setOwnership($ownership)
+  {
+    $this->ownership = $ownership;
+  }
+  public function getOwnership()
+  {
+    return $this->ownership;
+  }
   public function setPolicyCompliant($policyCompliant)
   {
     $this->policyCompliant = $policyCompliant;
@@ -337,6 +349,20 @@ class Google_Service_AndroidManagement_Device extends Google_Collection
     return $this->previousDeviceNames;
   }
   /**
+   * @param Google_Service_AndroidManagement_SecurityPosture
+   */
+  public function setSecurityPosture(Google_Service_AndroidManagement_SecurityPosture $securityPosture)
+  {
+    $this->securityPosture = $securityPosture;
+  }
+  /**
+   * @return Google_Service_AndroidManagement_SecurityPosture
+   */
+  public function getSecurityPosture()
+  {
+    return $this->securityPosture;
+  }
+  /**
    * @param Google_Service_AndroidManagement_SoftwareInfo
    */
   public function setSoftwareInfo(Google_Service_AndroidManagement_SoftwareInfo $softwareInfo)
@@ -357,6 +383,14 @@ class Google_Service_AndroidManagement_Device extends Google_Collection
   public function getState()
   {
     return $this->state;
+  }
+  public function setSystemProperties($systemProperties)
+  {
+    $this->systemProperties = $systemProperties;
+  }
+  public function getSystemProperties()
+  {
+    return $this->systemProperties;
   }
   /**
    * @param Google_Service_AndroidManagement_User

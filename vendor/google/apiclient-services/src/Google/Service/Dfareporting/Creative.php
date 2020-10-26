@@ -70,8 +70,9 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   public $mediaDescription;
   public $mediaDuration;
   public $name;
+  protected $obaIconType = 'Google_Service_Dfareporting_ObaIcon';
+  protected $obaIconDataType = '';
   public $overrideCss;
-  public $politeLoadAssetId;
   protected $progressOffsetType = 'Google_Service_Dfareporting_VideoOffset';
   protected $progressOffsetDataType = '';
   public $redirectUrl;
@@ -495,6 +496,20 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   {
     return $this->name;
   }
+  /**
+   * @param Google_Service_Dfareporting_ObaIcon
+   */
+  public function setObaIcon(Google_Service_Dfareporting_ObaIcon $obaIcon)
+  {
+    $this->obaIcon = $obaIcon;
+  }
+  /**
+   * @return Google_Service_Dfareporting_ObaIcon
+   */
+  public function getObaIcon()
+  {
+    return $this->obaIcon;
+  }
   public function setOverrideCss($overrideCss)
   {
     $this->overrideCss = $overrideCss;
@@ -502,14 +517,6 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   public function getOverrideCss()
   {
     return $this->overrideCss;
-  }
-  public function setPoliteLoadAssetId($politeLoadAssetId)
-  {
-    $this->politeLoadAssetId = $politeLoadAssetId;
-  }
-  public function getPoliteLoadAssetId()
-  {
-    return $this->politeLoadAssetId;
   }
   /**
    * @param Google_Service_Dfareporting_VideoOffset

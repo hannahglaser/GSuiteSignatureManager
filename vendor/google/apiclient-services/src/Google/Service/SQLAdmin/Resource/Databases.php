@@ -92,8 +92,8 @@ class Google_Service_SQLAdmin_Resource_Databases extends Google_Service_Resource
     return $this->call('list', array($params), "Google_Service_SQLAdmin_DatabasesListResponse");
   }
   /**
-   * Updates a resource containing information about a database inside a Cloud SQL
-   * instance. This method supports patch semantics. (databases.patch)
+   * Partially updates a resource containing information about a database inside a
+   * Cloud SQL instance. This method supports patch semantics. (databases.patch)
    *
    * @param string $project Project ID of the project that contains the instance.
    * @param string $instance Database instance ID. This does not include the

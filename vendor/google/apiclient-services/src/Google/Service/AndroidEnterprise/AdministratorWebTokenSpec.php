@@ -18,7 +18,8 @@
 class Google_Service_AndroidEnterprise_AdministratorWebTokenSpec extends Google_Collection
 {
   protected $collection_key = 'permission';
-  public $kind;
+  protected $managedConfigurationsType = 'Google_Service_AndroidEnterprise_AdministratorWebTokenSpecManagedConfigurations';
+  protected $managedConfigurationsDataType = '';
   public $parent;
   public $permission;
   protected $playSearchType = 'Google_Service_AndroidEnterprise_AdministratorWebTokenSpecPlaySearch';
@@ -30,13 +31,19 @@ class Google_Service_AndroidEnterprise_AdministratorWebTokenSpec extends Google_
   protected $webAppsType = 'Google_Service_AndroidEnterprise_AdministratorWebTokenSpecWebApps';
   protected $webAppsDataType = '';
 
-  public function setKind($kind)
+  /**
+   * @param Google_Service_AndroidEnterprise_AdministratorWebTokenSpecManagedConfigurations
+   */
+  public function setManagedConfigurations(Google_Service_AndroidEnterprise_AdministratorWebTokenSpecManagedConfigurations $managedConfigurations)
   {
-    $this->kind = $kind;
+    $this->managedConfigurations = $managedConfigurations;
   }
-  public function getKind()
+  /**
+   * @return Google_Service_AndroidEnterprise_AdministratorWebTokenSpecManagedConfigurations
+   */
+  public function getManagedConfigurations()
   {
-    return $this->kind;
+    return $this->managedConfigurations;
   }
   public function setParent($parent)
   {

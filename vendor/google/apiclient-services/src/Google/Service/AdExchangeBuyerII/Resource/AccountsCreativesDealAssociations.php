@@ -54,19 +54,16 @@ class Google_Service_AdExchangeBuyerII_Resource_AccountsCreativesDealAssociation
    * should return. Typically, this is the value of
    * ListDealAssociationsResponse.next_page_token returned from the previous call
    * to 'ListDealAssociations' method.
+   * @opt_param string query An optional query string to filter deal associations.
+   * If no filter is specified, all associations will be returned. Supported
+   * queries are: - accountId=*account_id_string* -
+   * creativeId=*creative_id_string* - dealsId=*deals_id_string* -
+   * dealsStatus:{approved, conditionally_approved, disapproved, not_checked} -
+   * openAuctionStatus:{approved, conditionally_approved, disapproved,
+   * not_checked} Example: 'dealsId=12345 AND dealsStatus:disapproved'
    * @opt_param int pageSize Requested page size. Server may return fewer
    * associations than requested. If unspecified, server will pick an appropriate
    * default.
-   * @opt_param string query An optional query string to filter deal associations.
-   * If no filter is specified, all associations will be returned. Supported
-   * queries are:
-   *
-   * accountId=account_id_string creativeId=creative_id_string
-   * dealsId=deals_id_string dealsStatus:{approved, conditionally_approved,
-   * disapproved,                   not_checked} openAuctionStatus:{approved,
-   * conditionally_approved, disapproved,                          not_checked}
-   *
-   * Example: 'dealsId=12345 AND dealsStatus:disapproved'
    * @return Google_Service_AdExchangeBuyerII_ListDealAssociationsResponse
    */
   public function listAccountsCreativesDealAssociations($accountId, $creativeId, $optParams = array())
